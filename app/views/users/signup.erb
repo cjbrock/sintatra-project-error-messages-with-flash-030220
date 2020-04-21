@@ -1,0 +1,23 @@
+<% if @user && @user.errors %>
+  <% @user.errors.full_messages.each do |error| %>
+    <p class="error"><%=error%></p>
+  <% end%>
+<% end %>
+
+<h1>What's your favorite quote?</h1>
+
+<form method="POST" action='/users'>
+  <label>name</label><br/>
+  <input type="text" name="name"><br />
+
+  <label>email</label><br/>
+  <input type="text" name="email"><br/>
+  
+  <label>password</label><br/>
+  <input type="password" name="password">
+  
+  <input type="submit" value="Sign Up!">
+</form>
+
+
+<h2>Would you like to <a href="/login">log in?</a></h2>
